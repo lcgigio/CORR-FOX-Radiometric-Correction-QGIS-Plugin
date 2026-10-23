@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Corr_RadDialogBase</class>
+ <widget class="QDialog" name="Corr_RadDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>830</width>
+    <height>734</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CORRFox</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="font">
+      <font>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="tab_apresentacao">
+      <attribute name="title">
+       <string>0 Tutorial</string>
+      </attribute>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>210</y>
+         <width>781</width>
+         <height>441</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h1 align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;Welcome to Corr. FOX&lt;/span&gt;&lt;/h1&gt;&lt;p align=&quot;justify&quot;&gt;The Corr. FOX plugin was designed to perform radiometric band calibration, specifically tailored for multispectral cameras mounted on drones&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;or Remotely Piloted Aircraft (RPAs) and field panels, utilizing the Empirical Line method.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Primary Goal:&lt;/span&gt; To convert Digital Number (DN) images into absolute reflectance values (ranging from 0.0 to 1.0) based on known ground calibration targets,&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;such as calibration panels or homogeneous surfaces.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Standard Workflow:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Setup:&lt;/span&gt; Link the raster images to their corresponding bands or select the directory where the files are stored.&lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sampling:&lt;/span&gt; Use the interactive tools to delineate the calibration panels/targets directly on the map.&lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Reflectance Input:&lt;/span&gt; Enter the known reflectance values for the targets (either manually or by importing a TXT/CSV file).&lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Calibration:&lt;/span&gt; Execute the process to calculate the band-specific equations and generate the newly corrected raster layers directly within your project.&lt;/li&gt;&lt;li align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Export:&lt;/span&gt; Save your visual reports (PDF) alongside your tabular and spatial data (CSV/SHP).&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnComecar">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>660</y>
+         <width>201</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Start!</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblIconePlugin">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>741</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>741</width>
+         <height>221</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_config">
+      <attribute name="title">
+       <string>1 Band Selection</string>
+      </attribute>
+      <widget class="QGroupBox" name="Bandas_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>641</width>
+         <height>211</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="title">
+        <string>Bands Directory</string>
+       </property>
+       <widget class="QLabel" name="lblBlue">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>110</y>
+          <width>61</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>BLUE (.tif)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblGreen">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>86</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>GREEN (.tif)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblRed">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>60</y>
+          <width>45</width>
+          <height>13</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>RED (.tif)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblRedEdge">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>140</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>RED EDGE (.tif)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lblNir">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>169</y>
+          <width>51</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>NIR (.tif)</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnNir">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>180</y>
+          <width>31</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnRedEdge">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>150</y>
+          <width>31</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnRed">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>60</y>
+          <width>31</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnGreen">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>90</y>
+          <width>31</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnBlue">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>120</y>
+          <width>31</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>...</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbRed">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>60</y>
+          <width>461</width>
+          <height>16</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbGreen">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>90</y>
+          <width>461</width>
+          <height>16</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbBlue">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>120</y>
+          <width>461</width>
+          <height>16</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbRedEdge">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>150</y>
+          <width>461</width>
+          <height>16</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="cbNir">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>180</y>
+          <width>461</width>
+          <height>16</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="btnProximo">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>650</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>Next</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>310</y>
+         <width>621</width>
+         <height>301</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Target Selection and Plaque Configuration</string>
+       </property>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Select Calibration Target:</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tabelaPontos">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>591</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnLimparAlvos">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>270</y>
+          <width>81</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Reset All</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnMarcarAlvo">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>30</y>
+          <width>25</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnSalvarShp">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>270</y>
+          <width>131</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Export Targets (.shp)</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnMarcarAlvoVertices">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>30</y>
+          <width>25</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnMarcarAlvoPonto">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>30</y>
+          <width>25</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>591</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>                                                                    STEP 1: Choose the bands for Calibration</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>270</y>
+         <width>591</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>                                                               STEP 2: Mark Target Reference for calibration</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_alvos">
+      <attribute name="title">
+       <string>2 Calibration</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>621</width>
+         <height>361</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="title">
+        <string>STEP 3: Plaque Reflectance Data</string>
+       </property>
+       <widget class="QLabel" name="lbSaveSHP_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>481</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>7</pointsize>
+          <italic>true</italic>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>The file (.txt or .csv) must have the format: BAND;PLATE;VALUE.
+The plate name in the file must correspond to what was entered in the previous step 
+(e.g.: &quot;dark&quot; is recognized in &quot;Dark Plate&quot;).</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tabelaReflectancias">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>581</width>
+          <height>201</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnImportarReflectancias">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>80</y>
+          <width>101</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Import Values</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnLimparTabela2">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>320</y>
+          <width>91</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Reset Values</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="btnExportarReflectancias">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>320</y>
+          <width>251</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>Export Reflectance Values Configurations</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>440</y>
+         <width>621</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>STEP 4: Regression Generation</string>
+       </property>
+       <widget class="QComboBox" name="cbTipoRegressao">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>60</y>
+          <width>361</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Empirical Line Method (ELM) (Y = a*X + b)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Empirical Line Method (ELM) Force Zero (Y = a*X))</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Regression Type:</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="btnCalcularCalibracao">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>610</y>
+         <width>191</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Run Radiometric Correction</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="resultsandexportation">
+      <attribute name="title">
+       <string>3 Results and Exportation</string>
+      </attribute>
+      <widget class="QScrollArea" name="scrollResultados">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>641</width>
+         <height>571</height>
+        </rect>
+       </property>
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scrollAreaWidgetContents">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>639</width>
+          <height>569</height>
+         </rect>
+        </property>
+        <widget class="QTextEdit" name="txt_summary">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>621</width>
+           <height>541</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QWidget" name="verticalLayoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>29</x>
+           <y>19</y>
+           <width>591</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout"/>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QPushButton" name="btn_export_pdf">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>600</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save PDF</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_export_csv">
+       <property name="geometry">
+        <rect>
+         <x>552</x>
+         <y>600</y>
+         <width>111</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save Stats .csv</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
